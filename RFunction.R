@@ -6,13 +6,10 @@ library('ctmm')
 
 rFunction <- function(data)
 {
-  plot(data)
-  
-  #guess  <- ctmm.guess(data)
-  #fit    <- ctmm.fit(data,guess)
-  #ud     <- akde(dat, fit, weights = TRUE )
-  #saveRDS(list(ud=ud,fit=fit), "akde_data.rds")
-  
+  data <- annotate(data)
+  COL <- color(data,by="sun")
+  plot(data,col=COL)
+
   result <- data
   return(result)
 }
