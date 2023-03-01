@@ -1,16 +1,42 @@
 {
   "settings": [
+    {
+  "id": "colorby",
+  "name": "Color locations by:",
+  "description": "Select an option.",
+  "type": "RADIOBUTTONS",
+  "defaultValue": "time",
+  "options": [
+    {
+      "value": "time",
+      "displayText": "Time"
+    },
+    {
+      "value": "sun",
+      "displayText": "Sunlight (sine of the sun's altitude)"
+    },
+    {
+      "value": "moon",
+      "displayText": "Moonlight (illuminated fraction of the moon)"
+    },
+    {
+      "value": "season",
+      "displayText": "Day lengh"
+    },
+    {
+      "value": "tropic",
+      "displayText": "Calender day"
+    },
+    {
+      "value": "individual",
+      "displayText": "Individual"
+    }]
+}
   ],
   "dependencies": {
     "R": [
-      {
-        "name": "move"
-      },
 	        {
         "name": "ctmm"
-      },
-	        {
-        "name": "suncalc"
       }
     ]
   },
@@ -21,7 +47,10 @@
   "language": "eng",
   "keywords": [
     "ctmm",
-    "sun angle",
+    "sunlight",
+    "moonlight",
+    "daylength",
+    "calendar day",
     "annotate",
 	"color locations",
 	"day",
@@ -40,9 +69,19 @@
       "orcid": "0000-0003-0193-1563",
       "affiliation": "Max-Planck-Institute of Animal Behavior",
       "affiliationRor": "https://ror.org/026stee22"
+    },
+    {
+      "firstName": "Anne",
+      "middleInitials": "K",
+      "lastName": "Scharf",
+      "email": "ascharf@ab.mpg.de",
+      "roles": ["author", "creator"],
+      "orcid": "0000-0002-3357-8533",
+      "affiliation": "Max-Planck-Institute of Animal Behavior",
+      "affiliationRor": "https://ror.org/026stee22"
     }
   ],
   "documentation": {
-    "url": "https://github.com/movestore/Telemetry_Type_Example/blob/main/README.md"
+    "url": "https://github.com/movestore/ColoringLocationsAnnotateCtmm/blob/main/README.md"
   }
 }

@@ -1,19 +1,16 @@
-library('move')
 library('ctmm')
-library('suncalc')
 
-#data0 <- readRDS("input2_geese.rds")
-#data <- as.telemetry(data0)
-#saveRDS(data,file="input2_geese_telemetry_list.rds")
-#data <- readRDS("input2_geese_telemetry_list.rds")
+## ToDo
+# add legend 
+# add maybe some color() options like color ramp, transparency,
+# add some plot.telemetry options like display error T/F, size of pts,
 
-# telemetry||telemetry-list to telemetry||telemetry-list
-rFunction <- function(data)
+rFunction <- function(data, colorby=c("individual", "time", "sun", "moon", "season", "tropic"))
 {
   data <- annotate(data)
-  COL <- color(data,by="sun")
+  COL <- color(data,by=colorby)
   
-  pdf(paste0(Sys.getenv(x = "APP_ARTIFACTS_DIR", "/tmp/"), "locations_colored_by_daynight.pdf"))
+  pdf(appArtifactPath(paste0("locations_colored_by_",colorby,".pdf")))
   plot(data,col=COL)
   dev.off()
 
