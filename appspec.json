@@ -37,6 +37,9 @@
     "R": [
 	        {
         "name": "ctmm"
+      },
+      {
+        "name":"suncalc"
       }
     ]
   },
