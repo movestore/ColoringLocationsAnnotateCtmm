@@ -10,6 +10,8 @@ This App generates a plot with the locations colored by time, sunlight, moonligh
 ## Documentation
 `Time` refers to the timestamps of the locations; `Sunlight` is calculated as the the sine of the sun's altitude, which is proportional to solar flux during daylight hours; `Moonlight` is calculated as the illuminated fraction of the moon; `Day length` will also correspond to the local season; `Calender day` will eventually be upgraded to tropical-year cycle; when coloring by `Individual` it will color to minimize the maximum combined spatial and color overlap.
 
+The output data set will contain the added columns named `moonlight`, `sunlight`, `season` (day length), `tropic` (calender day).
+
 ### Input data
 telemetry.list
 
@@ -27,4 +29,4 @@ telemetry.list
 
 ### Null or error handling
 
-**Data**: The full input data set is returned for further use in a next App and cannot be empty.
+**Data**: The full input data set with the additional columns is returned for further use in a next App and cannot be empty. 
