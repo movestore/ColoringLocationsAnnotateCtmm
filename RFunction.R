@@ -7,14 +7,15 @@ library("suncalc")
 # add some plot.telemetry options like display error T/F, size of pts,
 # pdf or png, jpg???
 
-rFunction <- function(data, colorby=c("individual", "time", "sun", "moon", "season", "tropic"))
+rFunction <- function(data,showError=T, colorby=c("individual", "time", "sun", "moon", "season", "tropic"))
 {
-  data <- annotate(data)
-  COL <- color(data,by=colorby)
-  
   pdf(appArtifactPath(paste0("locations_colored_by_",colorby,".pdf")))
-  plot(data,col=COL)
-  dev.off()
+  lapply(data, function(ind){
+    ind <- annotate(ind)
+    COL <- color(ind,by=colorby)
+    plot(ind,col=COL, error=showError, cex=.3, main= paste0("Track: ",as.character(ind@info$identity)))
+  })
+   dev.off()
 
   result <- data
   return(result)
