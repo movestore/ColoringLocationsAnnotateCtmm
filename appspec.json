@@ -31,6 +31,21 @@
       "value": "individual",
       "displayText": "Individual"
     }]
+},
+{
+  "id": "showError",
+  "name": "Plot error circles if present in the data",
+  "description": "Select an option.",
+  "type": "RADIOBUTTONS",
+  "defaultValue": true,
+  "options": [{
+      "value": true,
+      "displayText": "True"
+    },
+    {
+      "value": false,
+      "displayText": "False"
+    }]
 }
   ],
   "dependencies": {
